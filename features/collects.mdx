@@ -1,0 +1,219 @@
+---
+title: "Collects"
+description: "How collecting photos works and strategic considerations"
+---
+
+## What Are Collects?
+
+Collecting is the core prediction mechanism of JPEG. Users "collect" photos by betting 20 PX each, predicting which photo will win the day's popularity contest.
+
+## How Collecting Works
+
+### The Process
+
+1. **Browse Photos** - View all submissions for today's theme
+2. **Choose Your Pick** - Select photos you think will win
+3. **Collect** - Bet 20 PX on each photo
+4. **Earn Shares** - Receive shares based on collection time
+5. **Win Rewards** - If photo wins, receive portion of prize pool
+
+### Share Calculation
+
+Shares are calculated using the time decay formula:
+
+```
+Shares = px · (1-t)
+```
+
+Where:
+- `px` = 20 PX (collect value)
+- `t` = normalized time (0 at start, 1 at 24 hours)
+
+## Time Decay Impact
+
+The earlier you collect, the more shares you receive:
+
+| Collection Time | Normalized Time | Shares | Percentage of Max |
+|----------------|-----------------|--------|-------------------|
+| Hour 0 | 0.0 | 20 | 100% |
+| Hour 6 | 0.25 | 15 | 75% |
+| Hour 12 | 0.5 | 10 | 50% |
+| Hour 18 | 0.75 | 5 | 25% |
+| Hour 24 | 1.0 | 0 | 0% |
+
+<Info>
+  This creates strategic tension: early collects yield more shares but carry higher uncertainty. Late collects are safer but yield fewer shares.
+</Info>
+
+## Prize Pool Distribution
+
+### How It Works
+
+**Total Collects:** 1,000 collects × 20 PX = 20,000 PX
+
+**Distribution:**
+- **80% (16,000 PX)** → Prize pool (distributed to collectors)
+- **20% (4,000 PX)** → Creator royalties
+
+### Share-Based Payouts
+
+Prize pool is distributed proportionally based on shares:
+
+```
+Your Payout = (Your Total Shares / All Winning Shares) × Prize Pool
+```
+
+**Example:**
+- You collected the winning photo at hour 0: 20 shares
+- Total shares on winning photo: 200 shares
+- Prize pool: 16,000 PX
+- Your payout: (20/200) × 16,000 = 1,600 PX
+
+<Note>
+  Multiple collects on the same photo sum your shares. Diversifying across photos spreads risk.
+</Note>
+
+## Collection Strategies
+
+### Early Collection Strategy
+
+**Pros:**
+- Maximum shares per collect (20 shares)
+- Higher potential returns
+- First-mover advantage
+
+**Cons:**
+- Higher uncertainty
+- Risk of backing losing photos
+- Capital locked until contest ends
+
+**Best For:**
+- Users confident in their judgment
+- Those seeking maximum returns
+- Risk-tolerant speculators
+
+### Late Collection Strategy
+
+**Pros:**
+- More information available
+- Can identify trending photos
+- Lower risk
+
+**Cons:**
+- Fewer shares per collect
+- Lower potential returns
+- May miss early advantages
+
+**Best For:**
+- Risk-averse users
+- Those wanting more certainty
+- Users with limited capital
+
+### Diversification Strategy
+
+**Approach:**
+- Multiple collects across different photos
+- Mix of early and late collects
+- Balance risk and reward
+
+**Example:**
+- 5 early collects (20 shares each) = 100 shares
+- 10 late collects (5 shares each) = 50 shares
+- Total: 150 shares across 15 photos
+
+<Tip>
+  Diversification helps manage risk. Don't put all your PX on a single photo unless you're very confident.
+</Tip>
+
+## Predicting Winners
+
+### Factors to Consider
+
+<AccordionGroup>
+  <Accordion title="Photo Quality" icon="image">
+    High-quality, creative photos tend to win. Look for standout visuals.
+  </Accordion>
+  <Accordion title="Theme Interpretation" icon="lightbulb">
+    Unique takes on themes capture attention. Avoid generic submissions.
+  </Accordion>
+  <Accordion title="Creator Reputation" icon="star">
+    Established creators often have followings that collect their photos.
+  </Accordion>
+  <Accordion title="Early Collections" icon="chart-line">
+    Photos with many early collects may signal winner potential.
+  </Accordion>
+  <Accordion title="Social Signals" icon="users">
+    Photos being shared or discussed may indicate popularity.
+  </Accordion>
+</AccordionGroup>
+
+### Prediction Accuracy
+
+Based on beta testing:
+- **Early collects aligning with winners:** 40-60%
+- Suggests users can identify quality content early
+- Market efficiency improves with more participants
+
+## Economic Considerations
+
+### Cost-Benefit Analysis
+
+**Cost per Collect:** 20 PX
+
+**Potential Returns:**
+- Early collect on winner: High (depends on total shares)
+- Late collect on winner: Lower but safer
+- Collect on loser: 0 PX (capital lost)
+
+**Expected Value:**
+```
+EV = (Probability of Win × Payout) - 20 PX
+```
+
+<Warning>
+  Collecting is speculative. Only collect with PX you can afford to lose. Past performance doesn't guarantee future results.
+</Warning>
+
+## Alternative: Exponential Decay
+
+The platform may implement exponential decay:
+
+```
+Shares = px · e^(-kt)
+```
+
+Where `k` is a decay constant (e.g., k=0.1).
+
+**Benefits:**
+- Smoother value decay
+- May increase late collects by 15%
+- More gradual reduction in share value
+
+## Platform Limits
+
+To prevent market domination:
+- **Collect caps per user** may be implemented
+- **Anomaly detection** flags suspicious activity
+- Accounts with >50% of collects on single photo may be flagged
+
+## Best Practices
+
+### Do's
+
+✅ Research photos before collecting  
+✅ Diversify across multiple photos  
+✅ Consider both early and late strategies  
+✅ Monitor trends throughout the day  
+✅ Only collect with PX you can afford to lose  
+
+### Don'ts
+
+❌ Don't collect randomly without research  
+❌ Don't put all PX on a single photo  
+❌ Don't ignore time decay implications  
+❌ Don't collect based solely on early signals  
+❌ Don't expect guaranteed returns  
+
+<Tip>
+  Successful collecting requires understanding photo quality, community preferences, and strategic timing. Start small, learn the patterns, then scale your strategy.
+</Tip>

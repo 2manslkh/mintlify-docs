@@ -1,85 +1,228 @@
 ---
 title: "Quickstart"
-description: "Start building awesome documentation in minutes"
+description: "Get started with JPEG in minutes"
 ---
 
-## Get started in three stepss
+## Welcome to JPEG
 
-Get your documentation site running locally and make your first customization.
+JPEG is a social prediction game that transforms photo sharing into an economic opportunity. Get started in three simple steps.
 
-### Step 1: Set up your local environment
+## Step 1: Join the Platform
 
-<AccordionGroup>
-  <Accordion icon="copy" title="Clone your docs locally">
-    During the onboarding process, you created a GitHub repository with your
-    docs content if you didn't already have one. You can find a link to this
-    repository in your [dashboard](https://dashboard.mintlify.com). To clone the
-    repository locally so that you can make and preview changes to your docs,
-    follow the [Cloning a
-    repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
-    guide in the GitHub docs.
-  </Accordion>
-  <Accordion icon="rectangle-terminal" title="Start the preview server">
-    1. Install the Mintlify CLI: `npm i -g mint` 2. Navigate to your docs
-    directory and run: `mint dev` 3. Open `http://localhost:3000` to see your
-    docs live!
-    <Tip>Your preview updates automatically as you edit files.</Tip>
-  </Accordion>
-</AccordionGroup>
+### Create Your Account
 
-### Step 2: Deploy your changes
+1. Visit [jpeg.fun](https://jpeg.fun)
+2. Sign up with your email or wallet
+3. Complete your profile
+4. Connect your Base wallet (optional for now)
 
-<AccordionGroup>
-  <Accordion icon="github" title="Install our GitHub app">
-    Install the Mintlify GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app).
-    
-    Our GitHub app automatically deploys your changes to your docs site, so you don't need to manage deployments yourself.
-</Accordion>
-<Accordion icon="palette" title="Update your site name and colors">
-    For a first change, let's update the name and colors of your docs site.
+<Card title="Join Waitlist" icon="rocket">
+  With 220,000+ waitlist signups, JPEG is building a vibrant community. Sign up
+  to be among the first to experience the platform.
+</Card>
 
-    1. Open `docs.json` in your editor.
-    2. Change the `"name"` field to your project name.
-    3. Update the `"colors"` to match your brand.
-    4. Save and see your changes instantly at `http://localhost:3000`.
+## Step 2: Understand the Basics
 
-    <Tip>Try changing the primary color to see an immediate difference!</Tip>
+### As a Creator
 
-  </Accordion>
-</AccordionGroup>
+**Submit Daily Themed Photos:**
 
-### Step 3: Go live
+1. Check today's theme (e.g., "Hydration", "My Face When...")
+2. Take a photo matching the theme
+3. Submit your photo
+4. **Earn 100 PX immediately**
 
-<Accordion icon="rocket" title="Publish your docs">
-  1. Commit and push your changes. 2. Your docs will update and be live in
-  moments!
-</Accordion>
+**Earn Royalties:**
 
-## Next steps
+- When others collect your photo, you earn 20% of all collects
+- More collects = more royalties
+- Royalties paid automatically
 
-Now that you have your docs running, explore these key features:
+**Create Freestyle JPEGs:**
+
+- Set your own scarcity (e.g., 1/100 limited edition)
+- Set pricing in PX or cryptocurrency
+- Sell directly to your audience
+
+### As a Collector
+
+**Collect Photos:**
+
+1. Browse today's themed submissions
+2. Choose photos you think will win
+3. Collect by betting 20 PX each
+4. **Earn shares** based on collection time
+
+**Share Calculation:**
+
+- Early collects = more shares (up to 20 shares)
+- Late collects = fewer shares
+- Formula: `Shares = 20 PX · (1-t)` where t is time (0-1)
+
+**Win Rewards:**
+
+- If your collected photo wins, receive portion of prize pool
+- Prize pool = 80% of all collects
+- Distributed based on your shares
+
+## Step 3: Start Participating
+
+### Your First Submission
+
+<Steps>
+  <Step title="Check the Theme">
+    Open the app and see today's themed prompt. Examples include "Hydration",
+    "Round", "My Face When...", or "Boy Dinner".
+  </Step>
+  <Step title="Take Your Photo">
+    Capture a photo that matches the theme. Be creative! Unique interpretations
+    stand out.
+  </Step>
+  <Step title="Submit">
+    Upload your photo. You'll immediately receive 100 PX as a submission reward.
+  </Step>
+  <Step title="Share and Promote">
+    Share your photo with friends or on social media to encourage collects. More
+    collects = more royalties!
+  </Step>
+</Steps>
+
+### Your First Collect
+
+<Steps>
+  <Step title="Browse Photos">
+    View all submissions for today's theme. Look for high-quality, creative
+    photos.
+  </Step>
+  <Step title="Make Your Pick">
+    Choose photos you think will win. Consider photo quality, creativity, and
+    theme interpretation.
+  </Step>
+  <Step title="Collect Early">
+    The earlier you collect, the more shares you receive. But early collects
+    carry higher risk.
+  </Step>
+  <Step title="Wait for Results">
+    After 24 hours, if your collected photo wins, you'll receive a portion of
+    the prize pool based on your shares.
+  </Step>
+</Steps>
+
+## Key Concepts
+
+### Time Decay
+
+The time decay mechanism rewards early collectors:
+
+| Collection Time | Shares Received  |
+| --------------- | ---------------- |
+| Hour 0 (start)  | 20 shares (100%) |
+| Hour 6          | 15 shares (75%)  |
+| Hour 12         | 10 shares (50%)  |
+| Hour 18         | 5 shares (25%)   |
+| Hour 24 (end)   | 0 shares (0%)    |
+
+<Tip>
+  Early collects yield more shares but require accurately predicting winners.
+  Late collects are safer but yield fewer shares.
+</Tip>
+
+### Royalties
+
+Creators earn 20% of all collects on their photos:
+
+**Example:**
+
+- 100 people collect your photo (20 PX each)
+- Total: 2,000 PX
+- Your royalty: 400 PX (20%)
+
+### Prize Pool
+
+80% of all collects fund the prize pool, distributed to collectors based on shares:
+
+**Example:**
+
+- 1,000 collects × 20 PX = 20,000 PX total
+- Prize pool: 16,000 PX (80%)
+- Creator royalties: 4,000 PX (20%)
+
+## Tips for Success
+
+### For Creators
+
+✅ **Focus on Quality:** High-quality, creative photos receive more collects  
+✅ **Be Unique:** Standout interpretations of themes capture attention  
+✅ **Submit Consistently:** Regular submissions build a following  
+✅ **Engage:** Share your photos and interact with the community  
+✅ **Diversify:** Create both themed photos and freestyle JPEGs
+
+### For Collectors
+
+✅ **Research First:** Look at photo quality and creativity before collecting  
+✅ **Diversify:** Don't put all PX on a single photo  
+✅ **Understand Time Decay:** Early collects yield more but carry risk  
+✅ **Follow Trends:** Monitor collect counts and trends  
+✅ **Start Small:** Learn the patterns before investing heavily
+
+<Warning>
+  Collecting is speculative. Only collect with PX you can afford to lose. Past
+  performance doesn't guarantee future results.
+</Warning>
+
+## Next Steps
+
+Now that you understand the basics:
 
 <CardGroup cols={2}>
-
-<Card title="Write Content" icon="pen-to-square" href="/essentials/markdown">
-  Learn MDX syntax and start writing your documentation.
-</Card>
-
-<Card title="Customize style" icon="palette" href="/essentials/settings">
-  Make your docs match your brand perfectly.
-</Card>
-
-<Card title="Add code examples" icon="square-code" href="/essentials/code">
-  Include syntax-highlighted code blocks.
-</Card>
-
-<Card title="API documentation" icon="code" href="/api-reference/introduction">
-  Auto-generate API docs from OpenAPI specs.
-</Card>
-
+  <Card title="Learn More" icon="book" href="/overview">
+    Read the complete overview of JPEG's mechanics and features
+  </Card>
+  <Card title="Understand Tokenomics" icon="coins" href="/concepts/tokenomics">
+    Learn about Pixels (PX) and $JPEG tokens
+  </Card>
+  <Card title="Explore Features" icon="image" href="/features/themed-photos">
+    Discover themed photos, freestyle JPEGs, and more
+  </Card>
+  <Card title="Read the Whitepaper" icon="file-lines" href="/whitepaper">
+    Dive deep into the technical details and research
+  </Card>
 </CardGroup>
 
+## Common Questions
+
+<AccordionGroup>
+  <Accordion title="How do I earn PX?">
+    Submit themed photos (100 PX), earn royalties (20% of collects), or sell
+    freestyle JPEGs. You can also receive PX from referrals (10 PX per invited
+    user).
+  </Accordion>
+  <Accordion title="What happens if my photo doesn't win?">
+    You still earn royalties! Every collect on your photo generates 20%
+    royalties, regardless of whether it wins.
+  </Accordion>
+  <Accordion title="Can I collect multiple photos?">
+    Yes! You can collect as many photos as you want. Diversifying across
+    multiple photos spreads risk.
+  </Accordion>
+  <Accordion title="What's the difference between themed photos and freestyle JPEGs?">
+    Themed photos are for daily contests with time decay. Freestyle JPEGs are
+    market-driven assets you create with custom scarcity and pricing.
+  </Accordion>
+  <Accordion title="How do I create freestyle JPEGs?">
+    Set scarcity (e.g., 1/100), set price (PX or crypto), upload your photo, and
+    publish. It becomes immediately available for purchase.
+  </Accordion>
+</AccordionGroup>
+
+## Need Help?
+
+- **Documentation:** Browse all guides and technical docs
+- **Community:** Join discussions and get support
+- **Email:** support@jpeg.fun
+- **Website:** [jpeg.fun](https://jpeg.fun)
+
 <Note>
-  **Need help?** See our [full documentation](https://mintlify.com/docs) or join
-  our [community](https://mintlify.com/community).
+  JPEG is in active development. Features and mechanics may evolve based on user
+  feedback and platform needs. Stay updated through official channels.
 </Note>

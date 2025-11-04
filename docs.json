@@ -1,11 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "JPEG Documentation",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#6366F1",
+    "light": "#818CF8",
+    "dark": "#4F46E5"
   },
   "favicon": "/favicon.svg",
   "navigation": {
@@ -18,69 +18,68 @@
             "pages": [
               "index",
               "quickstart",
-              "development"
+              "overview"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Core concepts",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
+              "concepts/how-it-works",
+              "concepts/user-types",
+              "concepts/prediction-market",
+              "concepts/tokenomics"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Platform features",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "features/themed-photos",
+              "features/freestyle-jpegs",
+              "features/collects",
+              "features/royalties"
             ]
           },
           {
-            "group": "AI tools",
+            "group": "Technical",
             "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "technical/mathematical-modeling",
+              "technical/behavioral-economics",
+              "technical/game-theory",
+              "technical/risks-mitigation"
+            ]
+          },
+          {
+            "group": "B2B",
+            "pages": [
+              "b2b/overview",
+              "b2b/case-studies",
+              "b2b/data-annotation"
+            ]
+          },
+          {
+            "group": "Development",
+            "pages": [
+              "development/stages",
+              "development/future-plans",
+              "development/ethical-considerations"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "Whitepaper",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "Whitepaper",
             "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "whitepaper/index"
             ]
           }
         ]
       }
     ],
     "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
+      "anchors": []
     }
   },
   "logo": {
@@ -91,32 +90,28 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:support@jpeg.fun"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Join Waitlist",
+      "href": "https://jpeg.fun"
     }
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
   },
   "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
+    "socials": {}
   }
 }

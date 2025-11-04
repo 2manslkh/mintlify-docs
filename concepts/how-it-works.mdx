@@ -1,0 +1,96 @@
+---
+title: "How It Works"
+description: "Understanding JPEG's core mechanics and gameplay"
+---
+
+## The Social Prediction Game
+
+JPEG combines three powerful elements into a single platform:
+
+1. **Social Photo Sharing** - Daily themed prompts inspire creative submissions
+2. **Prediction Market** - Users bet on which photos will win
+3. **Economic Rewards** - Creators earn royalties, collectors earn from prize pools
+
+## Daily Theme Flow
+
+### Step 1: Submit Your Photo
+
+Each day, users are presented with a themed prompt (e.g., "Hydration", "My Face When...", "Round"). Users submit a single photo that matches the theme.
+
+**Reward:** Earn 100 PX immediately upon submission.
+
+### Step 2: Others Collect Your Photo
+
+Other users can "collect" photos by betting 20 PX each, predicting which photo will win the day's popularity contest.
+
+### Step 3: Time Decay Mechanism
+
+The earlier someone collects, the more shares they receive:
+
+```
+Shares = px · (1-t)
+```
+
+Where:
+- `px` = collect value (20 PX)
+- `t` = normalized time (0 at start, 1 at 24 hours)
+
+**Example:**
+- Collect at hour 0: 20 shares
+- Collect at hour 12: 10 shares  
+- Collect at hour 24: 0 shares
+
+This creates strategic risk—early collects yield more shares but carry higher uncertainty.
+
+### Step 4: Prize Distribution
+
+At the end of 24 hours, the most popular photo wins:
+
+- **80%** of all collects → Prize pool (distributed to collectors based on shares)
+- **20%** of all collects → Creator royalties
+
+## Freestyle JPEGs
+
+Beyond daily themes, users can create **freestyle JPEGs**:
+
+- Set your own scarcity (e.g., limited to 100 editions)
+- Set pricing in PX or cryptocurrency
+- JPEGs become tradable assets on the platform
+- No time decay—value is market-driven
+
+This enables influencers and artists to monetize their personal brand directly.
+
+## True Social Concept
+
+JPEG's innovation lies in its **"True Social"** concept: capital flows reveal the truth of creative resonance. Just like Polymarket uses financial stakes to aggregate collective wisdom, JPEG's collects create a capital-backed mechanism where the most compelling photos naturally rise to the top.
+
+<Note>
+  This ensures fair rewards—popularity isn't just about likes, but about people putting their money where their mouth is.
+</Note>
+
+## User Types
+
+<AccordionGroup>
+  <Accordion title="User A: Content Creators" icon="camera">
+    Enjoy creative photo sharing and submit daily theme photos or freestyle JPEGs. Motivated by social validation and extrinsic rewards (royalties, direct sales). Seek self-expression and community engagement.
+  </Accordion>
+  <Accordion title="User B: Speculators" icon="chart-line">
+    Predict winning photos in themed collects or trade freestyle JPEGs as assets. Driven by financial gain, aiming to maximize returns through early collects or market trades.
+  </Accordion>
+  <Accordion title="A-to-B Transition" icon="arrows-rotate">
+    Royalties and freestyle JPEG sales enable creators to accumulate capital, transitioning into speculators. This creates a cyclical economy of creation and trading.
+  </Accordion>
+</AccordionGroup>
+
+## Example Scenario
+
+1. **Morning:** Daily theme "Hydration" is announced
+2. **Throughout the day:** 200 users submit photos, earning 100 PX each
+3. **Collections:** 1,000 collects happen (20 PX each = 20,000 PX total)
+4. **Prize pool:** 16,000 PX (80%) distributed to collectors based on shares
+5. **Creator royalties:** 4,000 PX (20%) split among creators
+6. **Winner:** Most collected photo receives the largest share of prize pool
+
+<Tip>
+  Early collects on the winning photo yield the highest returns, but require accurately predicting popularity before it's obvious.
+</Tip>

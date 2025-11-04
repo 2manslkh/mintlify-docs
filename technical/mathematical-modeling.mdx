@@ -1,0 +1,181 @@
+---
+title: "Mathematical Modeling"
+description: "Time decay mechanisms and prize pool distribution formulas"
+---
+
+## Time Decay Mechanism
+
+The time decay formula governs collect value for themed photos, creating strategic incentives for early participation.
+
+### Formula
+
+```
+Shares = f(px, t)
+```
+
+Where:
+- `px` = Nominal value of a collect (e.g., 20 PX)
+- `t` = Normalized time since posting, `t ∈ [0,1]` over 24 hours
+- `Shares` = Effective value of the collect in the prediction market
+
+### Linear Decay Model
+
+The standard implementation uses linear decay:
+
+```
+f(px, t) = px · (1-t)
+```
+
+**Example:**
+- At `t=0` (start): `Shares = 20 · (1-0) = 20 shares`
+- At `t=0.5` (12 hours): `Shares = 20 · (1-0.5) = 10 shares`
+- At `t=1` (24 hours): `Shares = 20 · (1-1) = 0 shares`
+
+<Info>
+  This model leverages loss aversion to encourage early collects. Users perceive late collects as a loss compared to maximum shares at t=0.
+</Info>
+
+### Exponential Decay Model
+
+An alternative exponential decay model may be implemented:
+
+```
+f(px, t) = px · e^(-kt)
+```
+
+Where `k` is a decay constant (e.g., `k=0.1`).
+
+**Benefits:**
+- Smoother value decay
+- May increase late collects by 15% (based on simulations)
+- More gradual reduction in share value
+
+**Example with k=0.1:**
+- At `t=0`: `Shares = 20 · e^0 = 20 shares`
+- At `t=0.5`: `Shares = 20 · e^(-0.05) ≈ 19 shares`
+- At `t=1`: `Shares = 20 · e^(-0.1) ≈ 18 shares`
+
+### Freestyle JPEGs
+
+Freestyle JPEGs are **not subject to time decay**. Their value is market-driven based on:
+- Scarcity
+- Creator reputation
+- Community demand
+- Trading dynamics
+
+## Prize Pool Distribution
+
+### Expected Prize Pool Formula
+
+The expected prize pool for linear decay is:
+
+```
+Prize Pool = 0.8 · N · V · ∫₀¹(1-t)dt = 0.4 · N · V
+```
+
+Where:
+- `N` = Number of collects
+- `V` = Value per collect (20 PX)
+- `0.8` = 80% allocated to prize pool
+- `0.4` = Result of integration
+
+### Example Calculation
+
+For `N=2,000` collects at `V=20` PX each:
+
+```
+Total Collects: 2,000 × 20 = 40,000 PX
+Prize Pool: 0.4 × 2,000 × 20 = 16,000 PX (80%)
+Creator Royalties: 0.1 × 2,000 × 20 = 4,000 PX (20%)
+```
+
+### Exponential Decay Impact
+
+Simulations suggest exponential decay (`k=0.1`) increases the prize pool by **10%** compared to linear decay, as more shares are maintained throughout the collection period.
+
+## Revenue Distribution Table
+
+| Transaction | Creator Revenue | Prize Pool |
+|:---|:---|:---|
+| 100 themed collects at 20 PX | 400 PX (20%) | 1,600 PX (80%) |
+| 50 freestyle JPEGs at 10 PX | 500 PX (direct) | - |
+
+## Monte Carlo Simulations
+
+### Time Decay Model Simulation
+
+A Monte Carlo simulation of the time decay model predicts:
+- **40% increase in early collects** when `k=0.1` in exponential decay formula
+- More balanced participation throughout 24-hour period
+- Improved prize pool distribution
+
+### Freestyle JPEG Trading
+
+Based on NFT market analogies:
+- Freestyle JPEG trading projected to increase creator revenue by **25%**
+- Market dynamics similar to meme-based cryptocurrency markets
+- Scarcity and creator reputation drive value
+
+## Mathematical Properties
+
+### Time Decay Characteristics
+
+**Linear Decay:**
+- Constant rate of decay
+- Predictable value reduction
+- Sharp cutoff at t=1
+
+**Exponential Decay:**
+- Gradual value reduction
+- Never reaches zero (asymptotic)
+- Smoother user experience
+
+### Share Distribution
+
+Shares are distributed proportionally:
+
+```
+User Payout = (User Shares / Total Winning Shares) × Prize Pool
+```
+
+This ensures fair distribution based on:
+- Collection timing (shares)
+- Number of collects per user
+- Winning photo selection
+
+## Optimization Considerations
+
+### Decay Constant Selection
+
+The decay constant `k` balances:
+- Early collect incentives
+- Late collect participation
+- Prize pool size
+- User experience
+
+**Testing:** Beta tests with `k=0.1` showed positive results.
+
+### Prize Pool Efficiency
+
+The 80/20 split optimizes:
+- Creator incentives (20% royalties)
+- Collector rewards (80% prize pool)
+- Platform sustainability
+- User retention
+
+<Note>
+  Platform may adjust splits (e.g., 25% creator, 75% pool) based on metrics and user feedback.
+</Note>
+
+## Validation Metrics
+
+Based on beta testing and simulations:
+
+- **Prize Pool Size:** Matches theoretical calculations
+- **Share Distribution:** Proportional and fair
+- **User Behavior:** Aligns with model predictions
+- **Revenue Projections:** On track with estimates
+
+<Tip>
+  Mathematical models guide platform design, but real-world user behavior and community dynamics also shape outcomes. The platform adapts based on data.
+</Tip>
