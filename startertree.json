@@ -1,0 +1,16 @@
+docs/
+  waitlist.json
+  pages/
+    introduction.mdx
+    what-is-jpeg.mdx
+    why-we-built-this.mdx
+    features.mdx
+    user-flow.mdx
+    mathematical-model.mdx
+    verification.mdx
+    legal.mdx
+    support.mdx
+    icm101.mdx
+  public/
+    logo.svg
+    logo-dark.svg

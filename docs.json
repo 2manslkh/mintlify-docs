@@ -8,90 +8,71 @@
     "dark": "#4F46E5"
   },
   "favicon": "/favicon.svg",
+
   "navigation": {
-    "tabs": [
+    "groups": [
       {
-        "tab": "Guides",
-        "groups": [
-          {
-            "group": "Getting started",
-            "pages": [
-              "index",
-              "quickstart",
-              "overview"
-            ]
-          },
-          {
-            "group": "Core concepts",
-            "pages": [
-              "concepts/how-it-works",
-              "concepts/user-types",
-              "concepts/prediction-market",
-              "concepts/tokenomics"
-            ]
-          },
-          {
-            "group": "Platform features",
-            "pages": [
-              "features/themed-photos",
-              "features/freestyle-jpegs",
-              "features/collects",
-              "features/royalties"
-            ]
-          },
-          {
-            "group": "Technical",
-            "pages": [
-              "technical/mathematical-modeling",
-              "technical/behavioral-economics",
-              "technical/game-theory",
-              "technical/risks-mitigation"
-            ]
-          },
-          {
-            "group": "B2B",
-            "pages": [
-              "b2b/overview",
-              "b2b/case-studies",
-              "b2b/data-annotation"
-            ]
-          },
-          {
-            "group": "Development",
-            "pages": [
-              "development/stages",
-              "development/future-plans",
-              "development/ethical-considerations"
-            ]
-          }
+        "group": "Getting started",
+        "pages": ["index", "quickstart", "overview"]
+      },
+      {
+        "group": "Core concepts",
+        "pages": [
+          "concepts/how-it-works",
+          "concepts/user-types",
+          "concepts/prediction-market",
+          "concepts/tokenomics"
         ]
       },
       {
-        "tab": "Whitepaper",
-        "groups": [
-          {
-            "group": "Whitepaper",
-            "pages": [
-              "whitepaper/index"
-            ]
-          }
+        "group": "Platform features",
+        "pages": [
+          "features/themed-photos",
+          "features/freestyle-jpegs",
+          "features/collects",
+          "features/royalties"
+        ]
+      },
+      {
+        "group": "Technical",
+        "pages": [
+          "technical/mathematical-modeling",
+          "technical/behavioral-economics",
+          "technical/game-theory",
+          "technical/risks-mitigation"
+        ]
+      },
+      {
+        "group": "B2B",
+        "pages": [
+          "b2b/overview",
+          "b2b/case-studies",
+          "b2b/data-annotation"
+        ]
+      },
+      {
+        "group": "Whitepaper",
+        "pages": ["whitepaper/index"]
+      },
+      {
+        "group": "Development",
+        "pages": [
+          "development/stages",
+          "development/future-plans",
+          "development/ethical-considerations"
         ]
       }
     ],
-    "global": {
-      "anchors": []
-    }
+    "global": { "anchors": [] }
   },
+
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
   },
   "navbar": {
     "links": [
-      {
-        "label": "Support",
-        "href": "mailto:support@jpeg.fun"
-      }
+      { "label": "Support", "href": "mailto:support@jpeg.fun" }
     ],
     "primary": {
       "type": "button",
@@ -100,18 +81,7 @@
     }
   },
   "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
-    ]
+    "options": ["copy", "view", "chatgpt", "claude", "perplexity", "mcp", "cursor", "vscode"]
   },
-  "footer": {
-    "socials": {}
-  }
+  "footer": { "socials": {} }
 }
