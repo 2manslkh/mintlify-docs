@@ -1,9 +1,9 @@
 /* styles.css */
 
 /* Hide the topbar (navbar) */
-div.flex.items-center.lg\:px-12.h-16.min-w-0.px-4 {
+/* div.flex.items-center.lg\:px-12.h-16.min-w-0.px-4 {
   display: none !important;
-}
+} */
 
 /* Ensure the table of contents remains hidden */
 div#table-of-contents, div[class*="toc"], aside {
