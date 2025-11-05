@@ -1,13 +1,8 @@
 // scripts.js
-const waitForElements = () => {
-  const sidebarContent = document.querySelector('#sidebar-content');
-  if (!sidebarContent) {
-    setTimeout(waitForElements, 100);
-    return;
-  }
-  
-document.addEventListener('DOMContentLoaded', () => {
-  // Find the sidebar content container
+
+console.log('scripts.js loaded');
+
+function setupSidebar() {
   const sidebarContent = document.querySelector('#sidebar-content');
   if (!sidebarContent) {
     console.error('Sidebar content (#sidebar-content) not found');
@@ -19,12 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
   headerContainer.className = 'flex justify-between items-center mb-6';
 
   // Move the logo
-  const logoLink = document.querySelector('a[href="/"]');
+  const logoLink = document.querySelector('div.flex.items-center.lg\\:px-12.h-16.min-w-0.px-4 a[href="/"]');
   if (logoLink) {
     const logoImgs = logoLink.querySelectorAll('img.nav-logo');
     logoImgs.forEach(img => {
       img.classList.add('px-1', 'h-6', 'max-w-48');
-      img.classList.remove('h-7'); // Remove old height class if present
+      img.classList.remove('h-7');
     });
     headerContainer.appendChild(logoLink);
   } else {
@@ -54,16 +49,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchWrapper = document.createElement('div');
   searchWrapper.className = 'relative hidden lg:flex items-center flex-1 justify-center';
 
-  // Move the search input
-  const searchButton = document.querySelector('#search-bar-entry');
+  // Move the search input (desktop and mobile)
+  const searchButton = document.querySelector('#search-bar-entry, #search-bar-entry-mobile');
   if (searchButton) {
     searchWrapper.appendChild(searchButton);
     searchContainer.appendChild(searchWrapper);
   } else {
-    console.error('Search button (#search-bar-entry) not found');
+    console.error('Search button (#search-bar-entry or #search-bar-entry-mobile) not found');
   }
 
-  // Insert the header and search containers at the top of the sidebar
+  // Insert containers at the top of the sidebar
   const navigationItems = sidebarContent.querySelector('#navigation-items');
   if (navigationItems) {
     sidebarContent.insertBefore(searchContainer, navigationItems);
@@ -73,7 +68,26 @@ document.addEventListener('DOMContentLoaded', () => {
     sidebarContent.prepend(searchContainer);
     sidebarContent.prepend(headerContainer);
   }
+}
+
+// Use MutationObserver to wait for the sidebar and topbar elements
+const observer = new MutationObserver(() => {
+  const sidebarContent = document.querySelector('#sidebar-content');
+  const logoLink = document.querySelector('div.flex.items-center.lg\\:px-12.h-16.min-w-0.px-4 a[href="/"]');
+  const themeToggle = document.querySelector('button[aria-label="Toggle dark mode"]');
+  const searchButton = document.querySelector('#search-bar-entry, #search-bar-entry-mobile');
+
+  if (sidebarContent && (logoLink || themeToggle || searchButton)) {
+    setupSidebar();
+    observer.disconnect(); // Stop observing once elements are found
+  }
 });
-  };
-document.addEventListener('DOMContentLoaded', waitForElements);
-  
+
+// Observe the document body for changes
+observer.observe(document.body, { childList: true, subtree: true });
+
+// Fallback: Try setup after DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('DOMContentLoaded fired');
+  setupSidebar();
+});
