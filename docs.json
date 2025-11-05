@@ -72,24 +72,7 @@
     "dark": "/logo/dark.svg"
   },
   "navbar": {
-    "links": [
-      { "label": "Contact", "href": "mailto:hello@jpeg.fun" }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Join Waitlist",
-      "href": "https://jpeg.fun"
-    }
-  },
-  "navbar": {
-    "links": [
-      { "label": "Contact", "href": "mailto:hello@jpeg.fun" }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Join Waitlist",
-      "href": "https://jpeg.fun"
-    }
+    "links": []
   },
   "contextual": {
     "options": ["copy", "view", "chatgpt", "claude", "perplexity", "mcp", "cursor", "vscode"]

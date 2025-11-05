@@ -1,3 +1,11 @@
-div[class*="topbar"] {
+/* styles.css */
+
+/* Hide the topbar (navbar) */
+div[class*="topbar"], header, nav {
+  display: none !important;
+}
+
+/* Hide the "On this page" section (table of contents) */
+div#table-of-contents, div[class*="toc"], aside {
   display: none !important;
 }
