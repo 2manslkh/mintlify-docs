@@ -6,9 +6,9 @@
 } */
 
 /* Ensure the table of contents remains hidden */
-div#table-of-contents, div[class*="toc"], aside {
+/* div#table-of-contents, div[class*="toc"], aside {
   display: none !important;
-}
+} */
 
 .video-background {
     position: fixed;
@@ -19,6 +19,8 @@ div#table-of-contents, div[class*="toc"], aside {
     object-fit: cover;
     z-index: -2;
 }
+
+
 
 .dark #sidebar-content {
     background-color: rgb(var(--background-dark)) !important;
