@@ -1,5 +1,11 @@
 // scripts.js
-
+const waitForElements = () => {
+  const sidebarContent = document.querySelector('#sidebar-content');
+  if (!sidebarContent) {
+    setTimeout(waitForElements, 100);
+    return;
+  }
+  
 document.addEventListener('DOMContentLoaded', () => {
   // Find the sidebar content container
   const sidebarContent = document.querySelector('#sidebar-content');
@@ -68,3 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
     sidebarContent.prepend(headerContainer);
   }
 });
+  };
+document.addEventListener('DOMContentLoaded', waitForElements);
+  
