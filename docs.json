@@ -10,6 +10,7 @@
   "favicon": "/favicon.svg",
   "tableOfContents": false,
   "styles": ["/styles.css"],
+  "scripts": ["/scripts.js"],
   "navigation": {
     "groups": [
       {
