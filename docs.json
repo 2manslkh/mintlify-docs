@@ -72,7 +72,7 @@
   },
   "navbar": {
     "links": [
-      { "label": "Support", "href": "mailto:support@jpeg.fun" }
+      { "label": "Contact", "href": "mailto:hello@jpeg.fun" }
     ],
     "primary": {
       "type": "button",
