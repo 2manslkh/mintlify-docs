@@ -1,11 +1,11 @@
 /* styles.css */
 
 /* Hide the topbar (navbar) */
-div[class*="topbar"], header, nav {
+div.flex.items-center.lg\:px-12.h-16.min-w-0.px-4 {
   display: none !important;
 }
 
-/* Hide the "On this page" section (table of contents) */
+/* Ensure the table of contents remains hidden */
 div#table-of-contents, div[class*="toc"], aside {
   display: none !important;
 }
