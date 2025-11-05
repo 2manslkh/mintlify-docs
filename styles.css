@@ -19,3 +19,11 @@ div#table-of-contents, div[class*="toc"], aside {
     object-fit: cover;
     z-index: -2;
 }
+
+.dark #sidebar-content {
+    background-color: rgb(var(--background-dark)) !important;
+}
+
+.light div[class^="Page_sidebar"], .light #sidebar-content {
+    background-color: rgb(var(--background-light)) !important;
+}
