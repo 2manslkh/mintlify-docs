@@ -9,3 +9,13 @@ div.flex.items-center.lg\:px-12.h-16.min-w-0.px-4 {
 div#table-of-contents, div[class*="toc"], aside {
   display: none !important;
 }
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
