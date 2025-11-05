@@ -10,28 +10,51 @@ div#table-of-contents, div#table-of-contents-layout, div[class*="toc"], aside {
   display: none !important;
 }
 
-@media (min-width: 1024px) {
-    .lg\:pl-\[23\.7rem\] {
-        padding-left: 21.7rem !important;
-    }
+/* Adjust content area layout to match desired classes */
+#content-area {
+  display: flex !important;
+  flex-direction: column !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  position: relative !important;
+  flex-grow: 1 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 48rem !important; /* max-w-3xl */
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
-.video-background {
-    position: fixed;
-    top: 0;
-    left: "21rem";
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -2;
+@media (min-width: 1536px) { /* 2xl */
+  #content-area {
+    max-width: 896px !important; /* 2xl:max-w-2xl */
+  }
 }
 
-
-
-.dark #sidebar-content {
-    background-color: rgb(var(--background-dark)) !important;
+@media (min-width: 1280px) { /* xl */
+  #content-area {
+    width: calc(100% - 19rem) !important; /* xl:w-[calc(100%-19rem)] */
+  }
 }
 
-.light div[class^="Page_sidebar"], .light #sidebar-content {
-    background-color: rgb(var(--background-light)) !important;
+/* Hide context menu */
+#page-context-menu {
+  display: none !important;
+}
+
+/* Style pagination to match desired */
+#pagination {
+  background: rgb(249 250 251 / 0.8) !important; /* bg-gray-50/80 */
+  border-radius: 0.5rem !important; /* rounded-2xl */
+  padding: 0.25rem !important; /* p-1 */
+}
+
+/* Ensure footer matches desired */
+#footer {
+  display: flex !important;
+  gap: 3rem !important; /* gap-12 */
+  justify-content: space-between !important;
+  padding-top: 2.5rem !important; /* pt-10 */
+  border-top: none !important;
+  flex-direction: row-reverse !important;
 }

@@ -76,7 +76,7 @@
     "links": []
   },
   "contextual": {
-    "options": ["copy", "view", "chatgpt", "claude", "perplexity", "mcp", "cursor", "vscode"]
+    "options": ["view", "chatgpt", "claude", "perplexity", "mcp", "cursor", "vscode"]
   },
   "footer": { "socials": {} }
 }
