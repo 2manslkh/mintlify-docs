@@ -1,0 +1,47 @@
+---
+title: Welcome
+description: JPEG — the social prediction game where creativity meets speculation.
+---
+
+import HeroLanding from "../components/HeroLanding";
+import { Cards, Card } from "mintlify/components";
+
+<HeroLanding />
+
+<div className="my-16 text-center">
+  <h2 className="text-3xl font-bold">Learn about JPEG</h2>
+  <p className="mt-2 text-gray-500">Everything from gameplay to economics.</p>
+</div>
+
+<Cards columns={3}>
+  <Card
+    title="What is JPEG?"
+    href="/overview"
+    description="A social game blending photos and prediction markets."
+  />
+  <Card
+    title="How it Works"
+    href="/concepts/how-it-works"
+    description="The mechanics behind themes, collects, and winners."
+  />
+  <Card
+    title="Tokenomics"
+    href="/economy/pixels"
+    description="Understand PX, $JPEG, royalties, and time decay."
+  />
+  <Card
+    title="For Creators"
+    href="/users/creator"
+    description="Post daily, earn royalties, and build your audience."
+  />
+  <Card
+    title="For Collectors"
+    href="/users/speculator"
+    description="Predict culture and win by backing what resonates."
+  />
+  <Card
+    title="Whitepaper"
+    href="/whitepaper/index"
+    description="Deep dive into the math, psychology, and design."
+  />
+</Cards>
