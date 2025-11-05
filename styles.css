@@ -5,10 +5,16 @@
   display: none !important;
 } */
 
-/* Ensure the table of contents remains hidden */
-/* div#table-of-contents, div[class*="toc"], aside {
+/* Hide the table of contents and its layout */
+div#table-of-contents, div#table-of-contents-layout, div[class*="toc"], aside {
   display: none !important;
-} */
+}
+
+@media (min-width: 1024px) {
+    .lg\:pl-\[23\.7rem\] {
+        padding-left: 21.7rem !important;
+    }
+}
 
 .video-background {
     position: fixed;
