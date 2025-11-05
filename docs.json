@@ -8,7 +8,8 @@
     "dark": "#4F46E5"
   },
   "favicon": "/favicon.svg",
-
+  "tableOfContents": false,
+  "styles": ["/styles.css"],
   "navigation": {
     "groups": [
       {
@@ -69,6 +70,16 @@
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
+  },
+  "navbar": {
+    "links": [
+      { "label": "Contact", "href": "mailto:hello@jpeg.fun" }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Join Waitlist",
+      "href": "https://jpeg.fun"
+    }
   },
   "navbar": {
     "links": [
