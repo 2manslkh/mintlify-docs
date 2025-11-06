@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
+  "theme": "maple",
   "name": "JPEG Documentation",
   "colors": {
     "primary": "#6366F1",
@@ -65,7 +65,15 @@
         ]
       }
     ],
-    "global": { "anchors": [] }
+    "global": {
+    "anchors": [
+      {
+        "anchor": "Raise",
+        "href": "https://jpeg.fun/submit",
+        "icon": "square-star"
+      }
+    ]
+  }
   },
 
   "logo": {
