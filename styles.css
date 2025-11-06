@@ -9,3 +9,64 @@ div#table-of-contents, div#table-of-contents-layout, div[class*="toc"], aside {
 #search-bar-entry {
   border-radius: 0.75rem;
 }
+
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.dark-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.35);
+  z-index: -1;
+}
+
+body:has(.intro-hero) #header {
+  display: none !important;
+}
+
+.intro-hero {
+  text-align: center;
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.spinner {
+  width: 8rem;
+  height: 8rem;
+  margin-bottom: 2rem;
+}
+
+.intro-title { … }
+.intro-subtitle { … }
+.intro-cards { … }
+.intro-card { … }
+.intro-card:hover { … }
+.intro-card-icon { … }
+
+/* optional dark/light sidebar background tweaks */
+.dark #sidebar-content { background-color: rgb(var(--background-dark)) !important; }
+.light #sidebar-content { background-color: rgb(var(--background-light)) !important; }
+
+/* responsive tweaks */
+@media (max-width: 968px) {
+  .intro-title { font-size: 3rem; }
+  .intro-subtitle { font-size: 1.125rem; }
+  .intro-cards { grid-template-columns: 1fr; }
+}

@@ -3,8 +3,36 @@ title: "Homepage"
 description: "Video goes brrrrrr"
 ---
 
-<video controls className="w-full aspect-video rounded-xl" src="https://mintcdn.com/star-a73a9f07/KEGQ_g3yY3FV4IZP/assets/bg_video.mp4?fit=max&auto=format&n=KEGQ_g3yY3FV4IZP&q=85&s=96223155d2e4335abb180b41ccaa4a5b" />
+<video
+  src="https://mintcdn.com/star-a73a9f07/KEGQ_g3yY3FV4IZP/assets/bg_video.mp4"
+  autoPlay
+  loop
+  muted
+  playsInline
+  className="video-background"
+/>
 
+<div className="dark-overlay"></div>
+
+<div className="intro-hero">
+
+  <h1 id="welcome-to-jpeg" className="intro-title">
+    Welcome to JPEG.
+  </h1>
+
+  <p id="tagline" className="intro-subtitle">
+    Your tagline here.
+  </p>
+
+  <div className="intro-cards">
+    <a href="/concepts/how-it-works" className="intro-card">
+      <span className="intro-card-icon"></span>
+      <h3>How it works</h3>
+      <p>Understand our prediction-market mechanics.</p>
+    </a>
+
+  </div>
+</div>
 ## What is JPEG?
 
 Billions of JPEGs are taken every day. What if taking one could make you money?
