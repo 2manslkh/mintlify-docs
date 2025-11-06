@@ -45,7 +45,6 @@ body:has(.intro-hero) #header {
   padding: 2rem;
   max-width: 900px;
   margin: 0 auto;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
