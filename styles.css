@@ -97,6 +97,7 @@ body:has(.intro-hero) #header {
   text-align: left;
   min-height: 140px;
   text-decoration: none;
+  min-width: 388px;
 }
 
 .intro-card:hover {
@@ -147,4 +148,15 @@ body:has(.intro-hero) #header {
   .intro-cards {
     grid-template-columns: 1fr;
   }
+}
+
+/* Index-only tweaks */
+.feedback-toolbar {
+  display: none !important;
+}
+
+/* Hide welcome to jpeg on index page */
+body:has(.intro-hero) li[id="/getting-started/welcome-to-jpeg"],
+body:has(.intro-hero) #pagination {
+  display: none !important;
 }
