@@ -78,11 +78,10 @@ body:has(.intro-hero) #header {
 /* Cards */
 .intro-cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem;
-  margin-top: 3rem;
-  width: 100%;
-  max-width: 800px;
+  margin: 3rem auto 0;
+  width: min(100%, 800px);
 }
 
 .intro-card {
@@ -96,7 +95,13 @@ body:has(.intro-hero) #header {
   text-align: left;
   min-height: 140px;
   text-decoration: none;
-  min-width: 388px;
+  /* remove min-width */
+}
+
+@media (max-width: 968px) {
+  .intro-cards {
+    grid-template-columns: 1fr;
+  }
 }
 
 .intro-card:hover {
