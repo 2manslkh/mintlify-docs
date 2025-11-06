@@ -8,5 +8,4 @@ div#table-of-contents, div#table-of-contents-layout, div[class*="toc"], aside {
 /* narrow the search field, tweak hover, etc. */
 #search-bar-entry {
   border-radius: 0.75rem;
-  /* your overrides */
 }
