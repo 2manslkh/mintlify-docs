@@ -15,7 +15,12 @@
     "groups": [
       {
         "group": "Getting started",
-        "pages": ["homepage", "index", "quickstart", "overview"]
+        "pages": [
+          "getting-started/index",
+          "getting-started/welcome-to-jpeg",
+          "getting-started/quickstart",
+          "getting-started/overview"
+        ]
       },
       {
         "group": "Core concepts",
