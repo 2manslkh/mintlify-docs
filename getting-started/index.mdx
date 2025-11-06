@@ -3,7 +3,50 @@ title: "Introduction"
 description: "Video goes brrrrrr"
 ---
 
-<video controls className="w-full aspect-video rounded-xl" src="https://mintcdn.com/star-a73a9f07/KEGQ_g3yY3FV4IZP/assets/bg_video.mp4?fit=max&auto=format&n=KEGQ_g3yY3FV4IZP&q=85&s=96223155d2e4335abb180b41ccaa4a5b" />
+<video
+  src="https://mintcdn.com/star-a73a9f07/KEGQ_g3yY3FV4IZP/assets/bg_video.mp4?fit=max&auto=format&n=KEGQ_g3yY3FV4IZP&q=85&s=96223155d2e4335abb180b41ccaa4a5b"
+  autoPlay
+  loop
+  muted
+  playsInline
+  className="video-background"
+  data-path="assets/bg_video.mp4"
+/>
+
+<div className="dark-overlay" />
+
+<div className="intro-hero">
+  <img
+    src="https://star.fun/spinning_1_black.gif"
+    alt="star spinner"
+    className="spinner"
+  />
+  <h1 className="intro-title">Welcome to JPEG.</h1>
+  <p className="intro-subtitle">Create and fund live startup launches.</p>
+
+  <div className="intro-cards">
+    <a href="/getting-started/welcome-to-jpeg" className="intro-card">
+      <span className="intro-card-icon"></span>
+      <h3>Welcome to JPEG</h3>
+      <p>A social prediction game blending photo sharing with prediction markets.</p>
+    </a>
+    <a href="/getting-started/quickstart" className="intro-card">
+      <span className="intro-card-icon"></span>
+      <h3>Quickstart</h3>
+      <p>Get started with JPEG in minutes.</p>
+    </a>
+    <a href="/concepts/how-it-works" className="intro-card">
+      <span className="intro-card-icon"></span>
+      <h3>How it works</h3>
+      <p>Understand the core mechanics of the platform.</p>
+    </a>
+    <a href="/concepts/prediction-market" className="intro-card">
+      <span className="intro-card-icon"></span>
+      <h3>Prediction Market</h3>
+      <p>Learn how the economy is structured.</p>
+    </a>
+  </div>
+</div>
 
 ## What is JPEG?
 
