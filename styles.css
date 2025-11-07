@@ -41,6 +41,7 @@ body:has(.intro-hero) #header {
 
 /* Hero content */
 .intro-hero {
+  min-width: 50vw;
   text-align: center;
   padding: 2rem;
   max-width: 900px;
@@ -162,5 +163,10 @@ body:has(.intro-hero) #header {
 /* Hide welcome to jpeg on index page */
 body:has(.intro-hero) li[id="/getting-started/welcome-to-jpeg"],
 body:has(.intro-hero) #pagination {
+  display: none !important;
+}
+
+/* Hide group link button */
+a.group\/link {
   display: none !important;
 }
