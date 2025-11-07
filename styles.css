@@ -41,10 +41,10 @@ body:has(.intro-hero) #header {
 
 /* Hero content */
 .intro-hero {
-  min-width: 50vw;
+  width: min(100%, 900px);
+  max-width: 900px;
   text-align: center;
   padding: 2rem;
-  max-width: 900px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -96,7 +96,6 @@ body:has(.intro-hero) #header {
   text-align: left;
   min-height: 140px;
   text-decoration: none;
-  /* remove min-width */
 }
 
 @media (max-width: 968px) {
@@ -172,5 +171,5 @@ a.group\/link {
 }
 
 /* Fix intro card off center to right */
-body:has(.intro-hero) #content-container { margin-left: 0; }
-body:has(.intro-hero) #content-area     { max-width: none; width: 100%; }
+body:has(.intro-hero) #content-container { margin-left: 0; }  /* keeps it aligned with the column */
+body:has(.intro-hero) #content-area { display: block; }       /* optional, keeps default flow */
