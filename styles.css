@@ -170,3 +170,7 @@ body:has(.intro-hero) #pagination {
 a.group\/link {
   display: none !important;
 }
+
+/* Fix intro card off center to right */
+body:has(.intro-hero) #content-container { margin-left: 0; }
+body:has(.intro-hero) #content-area     { max-width: none; width: 100%; }
