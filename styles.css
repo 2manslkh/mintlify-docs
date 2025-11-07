@@ -41,7 +41,7 @@ body:has(.intro-hero) #header {
 
 /* Hero content */
 .intro-hero {
-  width: min(100%, 900px);
+  min-width: 388px;
   max-width: 900px;
   text-align: center;
   padding: 2rem;
@@ -169,7 +169,3 @@ body:has(.intro-hero) #pagination {
 a.group\/link {
   display: none !important;
 }
-
-/* Fix intro card off center to right */
-body:has(.intro-hero) #content-container { margin-left: 0; }  /* keeps it aligned with the column */
-body:has(.intro-hero) #content-area { display: block; }       /* optional, keeps default flow */
