@@ -41,7 +41,7 @@ body:has(.intro-hero) #header {
 
 /* Hero content */
 .intro-hero {
-  min-width: 388px;
+  width: 900px;
   max-width: 900px;
   text-align: center;
   padding: 2rem;
@@ -52,6 +52,13 @@ body:has(.intro-hero) #header {
   justify-content: center;
   position: relative;
 }
+
+@media (max-width: 968px) {
+  .intro-hero {
+    min-width: auto;
+  }
+}
+
 
 .spinner {
   width: 8rem;
