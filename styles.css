@@ -41,7 +41,6 @@ body:has(.intro-hero) #header {
 
 /* Hero content */
 .intro-hero {
-  min-width: auto;
   max-width: 900px;
   text-align: center;
   padding: 2rem;
@@ -55,7 +54,7 @@ body:has(.intro-hero) #header {
 
 @media (min-width: 968px) {
   .intro-hero {
-    min-width: 900px;
+    margin-left: -160px;
   }
 }
 
