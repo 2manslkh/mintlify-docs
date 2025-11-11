@@ -167,8 +167,7 @@ body:has(.intro-hero) #header {
   display: none !important;
 }
 
-/* Hide welcome to jpeg on index page */
-body:has(.intro-hero) li[id="/getting-started/welcome-to-jpeg"],
+/* Hide only the bottom navigation on index page */
 body:has(.intro-hero) #pagination {
   display: none !important;
 }
