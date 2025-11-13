@@ -9,18 +9,21 @@
   },
   "favicon": "/favicon.svg",
   "tableOfContents": false,
-  "styles": ["/styles.css"],
-  "scripts": ["/scripts.js"],
+  "styles": [
+    "/styles.css"
+  ],
+  "scripts": [
+    "/scripts.js"
+  ],
   "navigation": {
     "groups": [
       {
         "group": "Getting started",
         "pages": [
           "getting-started/index",
-          "getting-started/welcome-to-jpeg",
           "getting-started/what-is-jpeg",
-          "getting-started/quickstart",
-          "getting-started/overview"
+          "getting-started/why-we-built-jpeg",
+          "getting-started/true-social"
         ]
       },
       {
@@ -60,7 +63,9 @@
       },
       {
         "group": "Whitepaper",
-        "pages": ["whitepaper/index"]
+        "pages": [
+          "whitepaper/index"
+        ]
       },
       {
         "group": "Development",
@@ -72,16 +77,15 @@
       }
     ],
     "global": {
-    "anchors": [
-      {
-        "anchor": "Waitlist",
-        "href": "https://jpeg.fun/",
-        "icon": "square-star"
-      }
-    ]
-  }
+      "anchors": [
+        {
+          "anchor": "Waitlist",
+          "href": "https://jpeg.fun/",
+          "icon": "square-star"
+        }
+      ]
+    }
   },
-
   "logo": {
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
@@ -90,7 +94,17 @@
     "links": []
   },
   "contextual": {
-    "options": ["view", "chatgpt", "claude", "perplexity", "mcp", "cursor", "vscode"]
+    "options": [
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
   },
-  "footer": { "socials": {} }
+  "footer": {
+    "socials": {}
+  }
 }
