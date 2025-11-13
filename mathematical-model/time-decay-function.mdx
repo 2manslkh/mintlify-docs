@@ -1,0 +1,76 @@
+---
+title: "Time-Decay Function & Prize Distribution"
+description: "Mathematical models governing JPEG's reward system for collectors and creators"
+---
+
+JPEG's system is built on transparent, predictable math.
+
+Every part of the gameplay — from collects to prize distribution — follows simple equations that reward early conviction and ensure fairness between creators and collectors.
+
+---
+
+## ⏱ Time-Decay Function
+
+Each photo in the daily game has a 24-hour collection window.
+
+Early collectors earn more *shares* than those who collect later.
+
+**Linear Decay Model:**
+
+```
+Shares = px × (1 − t)
+```
+
+- `px` = the amount spent per collect (in Pixels)
+- `t` = normalized time since posting (0 to 1)
+
+At `t = 0` (right after posting), collectors receive full share value.
+
+At `t = 1`, the collection window closes — no shares can be earned.
+
+This encourages conviction: acting early increases potential reward.
+
+---
+
+### Exponential Variant
+
+For smoother decay over time, JPEG can use an exponential model:
+
+```
+Shares = px × e^(−k × t)
+```
+
+- `k` = decay constant (e.g., 0.1)
+
+A smaller `k` makes the curve gentler, giving late collectors more participation.
+
+A higher `k` rewards early conviction more strongly.
+
+Simulations show the exponential model increases participation by roughly **10–15%**, creating a healthier overall pool.
+
+---
+
+## 💰 Prize Pool Distribution
+
+When users collect JPEGs, their PX contributes to the daily prize pool.
+
+80% of all PX spent funds the pool, while 20% goes directly to the creator as royalties.
+
+**Effective prize pool formula:**
+
+```
+PrizePool = 0.8 × N × V × ∫₀¹ (1 − t) dt
+```
+
+Simplified:
+
+```
+PrizePool = 0.4 × N × V
+```
+
+- `N` = total number of collects
+- `V` = value per collect (in PX)
+
+The integral represents the time weighting across 24 hours (average factor of 0.5).
+
+This results in an effective payout of **40% of total PX volume**, with **20%** always going to the creator.

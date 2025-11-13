@@ -35,43 +35,30 @@
         ]
       },
       {
-        "group": "Platform features",
+        "group": "The Economics of JPEG",
         "pages": [
-          "features/themed-photos",
-          "features/freestyle-jpegs",
-          "features/collects",
-          "features/royalties"
+          "the-economics-of-jpeg/dual-token-system",
+          "the-economics-of-jpeg/pixels",
+          "the-economics-of-jpeg/jpeg"
         ]
       },
       {
-        "group": "Technical",
+        "group": "Mathematical Model",
         "pages": [
-          "technical/mathematical-modeling",
-          "technical/behavioral-economics",
-          "technical/game-theory",
-          "technical/risks-mitigation"
+          "mathematical-model/time-decay-function",
+          "mathematical-model/freestyle-jpeg"
         ]
       },
       {
-        "group": "B2B",
+        "group": "Our Philosophy",
         "pages": [
-          "b2b/overview",
-          "b2b/case-studies",
-          "b2b/data-annotation"
+          "our-philosophy/philosophy"
         ]
       },
       {
         "group": "Whitepaper",
         "pages": [
           "whitepaper/index"
-        ]
-      },
-      {
-        "group": "Development",
-        "pages": [
-          "development/stages",
-          "development/future-plans",
-          "development/ethical-considerations"
         ]
       }
     ],
