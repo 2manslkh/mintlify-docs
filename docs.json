@@ -60,6 +60,19 @@
         "pages": [
           "whitepaper/index"
         ]
+      },
+      {
+        "group": "Community",
+        "pages": [
+          "community/guidelines"
+        ]
+      },
+      {
+        "group": "Legal",
+        "pages": [
+          "legal/privacy",
+          "legal/terms"
+        ]
       }
     ],
     "global": {
