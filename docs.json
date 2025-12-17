@@ -9,9 +9,22 @@
   },
   "favicon": "/favicon.svg",
   "tableOfContents": false,
-  "styles": ["/styles.css"],
-  "scripts": ["/scripts.js"],
+  "styles": [
+    "/styles.css"
+  ],
+  "scripts": [
+    "/scripts.js"
+  ],
   "navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Waitlist",
+          "icon": "square-star",
+          "href": "https://jpeg.fun/"
+        }
+      ]
+    },
     "groups": [
       {
         "group": "About Us",
@@ -55,26 +68,24 @@
       },
       {
         "group": "Whitepaper",
-        "pages": ["whitepaper/index"]
+        "pages": [
+          "whitepaper/index"
+        ]
       },
       {
         "group": "Community",
-        "pages": ["community/guidelines"]
+        "pages": [
+          "community/guidelines"
+        ]
       },
       {
         "group": "Legal",
-        "pages": ["legal/privacy", "legal/terms"]
+        "pages": [
+          "legal/privacy",
+          "legal/terms"
+        ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Waitlist",
-          "href": "https://jpeg.fun/",
-          "icon": "square-star"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",
