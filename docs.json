@@ -9,12 +9,8 @@
   },
   "favicon": "/favicon.svg",
   "tableOfContents": false,
-  "styles": [
-    "/styles.css"
-  ],
-  "scripts": [
-    "/scripts.js"
-  ],
+  "styles": ["/styles.css"],
+  "scripts": ["/scripts.js"],
   "navigation": {
     "groups": [
       {
@@ -52,27 +48,22 @@
       {
         "group": "Our Philosophy",
         "pages": [
-          "our-philosophy/philosophy"
+          "our-philosophy/philosophy",
+          "our-philosophy/open-networks",
+          "our-philosophy/jpeg-network"
         ]
       },
       {
         "group": "Whitepaper",
-        "pages": [
-          "whitepaper/index"
-        ]
+        "pages": ["whitepaper/index"]
       },
       {
         "group": "Community",
-        "pages": [
-          "community/guidelines"
-        ]
+        "pages": ["community/guidelines"]
       },
       {
         "group": "Legal",
-        "pages": [
-          "legal/privacy",
-          "legal/terms"
-        ]
+        "pages": ["legal/privacy", "legal/terms"]
       }
     ],
     "global": {

@@ -3,33 +3,20 @@ title: "Whitepaper"
 description: "Complete technical whitepaper for JPEG"
 ---
 
-## JPEG Whitepaper Version 2.0
+## JPEG Whitepaper Version 2.2
 
-**Author:** Danny Vayne  
-**Date:** October 18, 2025
+**Authors:** Danny Vayne & Lim Keng Hin  
+**Date:** November 2025
 
 ## Abstract
 
-Billions of JPEGs are taken every day. What if taking one could make you money? JPEG is a social prediction game blending BeReal-style photo sharing with a prediction market, powered by Base, an Ethereum Layer 2. Users submit photos for daily themes, earning 100 pixels (PX) per submission, while others "collect" them to bet on the day's winner, with earlier collects yielding more shares but carrying higher risk. Collects fuel a prize pool, creators earn 20% royalties, and the most popular photo wins crypto rewards. Beyond daily themes, users can create freestyle JPEGs with set scarcity and prices, tradable as assets, enabling influencer monetization. Inspired by Polymarket, JPEG introduces "True Social"- a concept where truth is backed by money, ensuring fair rewards through capital flows. It serves as a UGC engine for brands, fostering heuristic value around attention like MrBeast's model. This whitepaper explores JPEG's detailed mechanics, economic incentives, user psychology, novelty, and its potential as a viral, brand-driven platform, leveraging behavioral economics, game theory, and non-game enjoyment paradigms for clean, intuitive UI/UX.
+Billions of JPEGs are taken every day. What if taking one could make you money? **JPEG** is a social prediction game blending BeReal-style photo sharing with market-based coordination, powered by Base (Ethereum Layer 2). Users submit photos for daily themes, earning PX (Pixels), while others collect them to predict the day's most resonant image. Earlier collects receive more shares but carry higher risk, creating a strategic market for attention.
+
+Inspired by Polymarket, JPEG introduces **"True Social"**, where attention is backed by capital and rewards flow transparently to creators. Beyond the application, JPEG is designed to evolve into an open, composable network where JPEGs become standard photo assets that can be owned, traded, and built on by developers, entrepreneurs, traders, and collectors. This paper explores JPEG's mechanics, incentives, behavioral foundations, and long-term potential as both a viral consumer product and a creative economic network.
 
 ## Download the Complete Whitepaper
 
-<CardGroup cols={2}>
-  <Card
-    title="Download PDF"
-    icon="file-pdf"
-    href="/Jpeg_Whitepaper_V2.pdf"
-  >
-    Download the complete whitepaper as a PDF document
-  </Card>
-  <Card
-    title="View Markdown"
-    icon="code"
-    href="/JPEG_WHITEPAPER_V2.md"
-  >
-    View the whitepaper in markdown format
-  </Card>
-</CardGroup>
+**Not available**
 
 ## Table of Contents
 
@@ -37,18 +24,20 @@ The complete whitepaper covers:
 
 1. **Introduction** - Vision and core mechanics
 2. **The Social Prediction Game** - How JPEG works
-3. **Type of Users** - Creator and speculator personas
-4. **Mathematical Modelling** - Time decay and prize pool formulas
-5. **Behavioral Economics** - Psychological principles
-6. **Game Theory** - Strategic behavior and dynamics
-7. **User Acquisition and Retention** - Growth strategies
-8. **Development Stages** - Beta, points removal, B2B integration
-9. **Data and Validation** - Metrics and projections
-10. **Future Plans** - Photo ownership, data annotation, dual tokens
-11. **B2B Potential** - Brand partnerships and UGC engine
-12. **Ethical Considerations** - Privacy and fairness
-13. **Risks and Mitigation** - Platform safeguards
-14. **Conclusion** - Summary and vision
+3. **Open Networks, Skeuomorphism, and Digital Ownership** - Platform vs. network dynamics, blockchain advantages
+4. **The JPEG Network** - Evolution from app to composable photo asset network
+5. **Types of Users** - Creator and speculator personas, A-to-B transition
+6. **Mathematical Modeling & Tokenomics** - Shares-for-Fees model, time decay formulas, prize pool mechanics
+7. **Behavioral Economics** - Loss aversion, social proof, endowment effect, intrinsic vs. extrinsic motivation
+8. **Game Theory** - Strategic behavior, prediction market dynamics, decision matrices
+9. **User Acquisition and Retention** - Growth strategies, community building through tags
+10. **Development Stages** - Beta, points removal, B2B integration
+11. **Data and Validation** - Metrics and projections
+12. **Future Plans** - Data annotation, dual token system
+13. **B2B Potential** - Brand partnerships and UGC engine
+14. **Legal, Data Rights & Ethical Considerations** - Photo ownership, privacy, GDPR compliance
+15. **Risks and Mitigation** - Platform safeguards
+16. **Conclusion** - Summary and vision
 
 ## Key Highlights
 
@@ -56,16 +45,24 @@ The complete whitepaper covers:
 
 JPEG's innovation lies in its **"True Social"** concept, inspired by Polymarket's capital-backed prediction model. Capital flows through collects reveal the truth of creative resonance—the most compelling photos rise to the top, ensuring fair rewards.
 
+Beyond the application, JPEG is designed to evolve into an **open, composable network** where JPEGs become standard photo assets that can be owned, traded, and built upon by developers, entrepreneurs, traders, and collectors. This network approach distinguishes JPEG from traditional platforms: platforms compete with complements, networks empower them.
+
 ### Economic Model
 
-**Dual Token System:**
-- **Pixels (PX):** In-game token for collects and purchases
-- **$JPEG:** Governance token for investors with deflationary mechanism
+**Shares-for-Fees Model:**
+The JPEG economy operates on a **Shares-for-Fees** model, ensuring 100% of the PX (Pixel) currency deposited by users is immediately allocated to the global prize pool. Platform and creator fees are paid in the form of shares, introducing controlled dilution to winning potential rather than reducing capital available for rewards. This mechanism guarantees capital efficiency and full transparency.
 
-**Revenue Distribution:**
-- 80% of collects → Prize pool
-- 20% of collects → Creator royalties
-- Freestyle JPEGs → 100% direct sales to creators
+**Dual Token System:**
+
+- **Pixels (PX):** An in-game token used for themed collects and freestyle purchases, designed to feel non-financialized for users
+- **$JPEG:** A governance token for investors, enabling speculation on the platform's success. Profits from the app are reinvested to create deflationary pressure on $JPEG
+
+**Share Allocation:**
+
+- **User Shares:** Collectors receive shares based on bet amount and time discount: \(S = B \cdot (1 + D_t)\)
+- **Creator Shares:** Photo creators receive shares as royalties: \(S_C = B \cdot R_C\) (typically 20%)
+- **Foundation Shares:** JPEG Foundation receives shares: \(S_F = B \cdot R_F\) (typically 10%)
+- **Freestyle JPEGs:** 100% direct sales to creators
 
 ### Platform Statistics
 
@@ -77,15 +74,21 @@ JPEG's innovation lies in its **"True Social"** concept, inspired by Polymarket'
 ### Research Foundation
 
 The whitepaper draws from:
+
 - Behavioral economics (loss aversion, social proof, endowment effect)
 - Game theory (non-cooperative games, strategic behavior)
 - Prospect theory and self-determination theory
 - NFT market analogies and SocialFi trends
+- Network theory and composability (Dixon 2024: "Read Write Own")
+- Skeuomorphic design principles for blockchain adoption
 
 ## Disclaimer
 
 <Warning>
-  **Restricted Access:** This whitepaper is not ready for public disbursement and is intended solely for individuals within the organization, investors, and permissioned individuals. Distribution beyond these parties is prohibited without explicit authorization.
+  **Restricted Access:** This whitepaper is not ready for public disbursement
+  and is intended solely for individuals within the organization, investors, and
+  permissioned individuals. Distribution beyond these parties is prohibited
+  without explicit authorization.
 </Warning>
 
 ## Citation
@@ -93,8 +96,8 @@ The whitepaper draws from:
 If referencing this whitepaper:
 
 ```
-Vayne, D. (2025). JPEG: A Social Game Integrating Photo Sharing, 
-Prediction Markets, and User-Generated Content (Version 2.0). 
+Vayne, D., & Lim, K. H. (2025). JPEG: A Social Game Integrating Photo Sharing,
+Prediction Markets, and Network for Composable Photo Assets (Version 2.2).
 JPEG Platform.
 ```
 
@@ -107,5 +110,7 @@ For questions about the whitepaper or JPEG platform:
 - **Documentation:** Browse all documentation pages
 
 <Note>
-  The whitepaper is a living document and may be updated based on platform development, user feedback, and market conditions. Check back for the latest version.
+  The whitepaper is a living document and may be updated based on platform
+  development, user feedback, and market conditions. Check back for the latest
+  version.
 </Note>

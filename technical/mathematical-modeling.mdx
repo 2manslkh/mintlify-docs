@@ -3,108 +3,139 @@ title: "Mathematical Modeling"
 description: "Time decay mechanisms and prize pool distribution formulas"
 ---
 
+## Shares-for-Fees Model
+
+The JPEG economy operates on a **Shares-for-Fees** model, ensuring 100% of the PX (Pixel) currency deposited by users is immediately allocated to the global prize pool. Platform and creator fees are paid in the form of shares, introducing controlled dilution to winning potential rather than reducing capital available for rewards. This mechanism guarantees capital efficiency and full transparency.
+
+### Key Variables
+
+| Variable | Definition                                                    | Unit     |
+| :------- | :------------------------------------------------------------ | :------- |
+| `B`      | Individual Bet Amount (ranging from 1 to Max Bet Limit)       | PX       |
+| `∑B`     | Sum of all Bets (PX) placed across all photos                 | PX       |
+| `F`      | **Foundation Funding:** Fixed PX injected into the prize pool | PX       |
+| `t_bet`  | Time the bet is placed, normalized (0 to 1)                   | Unitless |
+| `t_post` | Time the photo was posted, normalized `t ∈ [0, 1)`            | Unitless |
+| `D_max`  | Maximum initial discount (e.g., `0.99 → 99%`)                 | Unitless |
+| `R_C`    | **Creator Share Rate:** (e.g., `0.20 → 20%`)                  | Unitless |
+| `R_F`    | **Foundation Share Rate:** (e.g., `0.10 → 10%`)               | Unitless |
+
 ## Time Decay Mechanism
 
 The time decay formula governs collect value for themed photos, creating strategic incentives for early participation.
 
-### Formula
+### Quadratic Time Discount (D_t)
+
+The system uses a **quadratic time discount** model. The initial discount (`D_max`) decays quadratically as the game window closes (`t_bet → 1`). The decay is calculated relative to the photo's lifespan (from `t_post` to `t=1`).
+
+**Quadratic Time Discount Formula:**
 
 ```
-Shares = f(px, t)
+D_t = D_max · (1 - (t_bet - t_post) / (1.0 - t_post))²
 ```
 
-Where:
-- `px` = Nominal value of a collect (e.g., 20 PX)
-- `t` = Normalized time since posting, `t ∈ [0,1]` over 24 hours
-- `Shares` = Effective value of the collect in the prediction market
+**Example with D_max = 0.99:**
 
-### Linear Decay Model
+**Scenario A (Post at 00:00):**
 
-The standard implementation uses linear decay:
+- A bet placed at 00:00 receives the full 99% discount
+- A bet placed at 12:00 (halfway through the day) receives a ~25% discount (`0.99 · 0.5²`)
 
-```
-f(px, t) = px · (1-t)
-```
+**Scenario B (Post at 12:00):**
 
-**Example:**
-- At `t=0` (start): `Shares = 20 · (1-0) = 20 shares`
-- At `t=0.5` (12 hours): `Shares = 20 · (1-0.5) = 10 shares`
-- At `t=1` (24 hours): `Shares = 20 · (1-1) = 0 shares`
+- A bet placed immediately at 12:00 receives the full 99% discount
+- A bet placed at 18:00 (halfway through the remaining window) receives a ~25% discount
 
 <Info>
-  This model leverages loss aversion to encourage early collects. Users perceive late collects as a loss compared to maximum shares at t=0.
+  Earlier posts (e.g., 00:00) offer a larger window of opportunity and a greater
+  cumulative discount "mass" than later posts. This incentivizes creators to
+  post early to maximize the time window for high-value collects.
 </Info>
 
-### Exponential Decay Model
-
-An alternative exponential decay model may be implemented:
-
-```
-f(px, t) = px · e^(-kt)
-```
-
-Where `k` is a decay constant (e.g., `k=0.1`).
-
-**Benefits:**
-- Smoother value decay
-- May increase late collects by 15% (based on simulations)
-- More gradual reduction in share value
-
-**Example with k=0.1:**
-- At `t=0`: `Shares = 20 · e^0 = 20 shares`
-- At `t=0.5`: `Shares = 20 · e^(-0.05) ≈ 19 shares`
-- At `t=1`: `Shares = 20 · e^(-0.1) ≈ 18 shares`
+<Warning>
+  `t_post` must be strictly less than 1.0. A post submitted at the exact end of
+  the day (`t=1`) allows for no betting window and is therefore undefined in
+  this model.
+</Warning>
 
 ### Freestyle JPEGs
 
 Freestyle JPEGs are **not subject to time decay**. Their value is market-driven based on:
+
 - Scarcity
 - Creator reputation
 - Community demand
 - Trading dynamics
 
+## Share Issuance
+
+For every bet (`B`), three distinct categories of shares are issued. `D_t` creates the primary incentive for early participation.
+
+### Share Allocation Formulas
+
+| Share Type                  | Formula             | Description                                                                 |
+| :-------------------------- | :------------------ | :-------------------------------------------------------------------------- |
+| **User Shares (S)**         | `S = B · (1 + D_t)` | Shares received by the collector. Represents the user's equity in the pool. |
+| **Creator Shares (S_C)**    | `S_C = B · R_C`     | Shares allocated to the photo's creator (fee taken as equity dilution).     |
+| **Foundation Shares (S_F)** | `S_F = B · R_F`     | Shares allocated to the JPEG Foundation (fee taken as equity dilution).     |
+
+The **Total Shares Issued per transaction** (`S_Total`) for this photo is:
+
+```
+S_Total = B · (1 + D_t + R_C + R_F)
+```
+
 ## Prize Pool Distribution
 
-### Expected Prize Pool Formula
+### Prize Pool Contribution (P)
 
-The expected prize pool for linear decay is:
-
-```
-Prize Pool = 0.8 · N · V · ∫₀¹(1-t)dt = 0.4 · N · V
-```
-
-Where:
-- `N` = Number of collects
-- `V` = Value per collect (20 PX)
-- `0.8` = 80% allocated to prize pool
-- `0.4` = Result of integration
-
-### Example Calculation
-
-For `N=2,000` collects at `V=20` PX each:
+The Prize Pool (`P`) is the total capital available to be distributed to the shareholders of the winning photo. Every PX bet by a user directly feeds this pool.
 
 ```
-Total Collects: 2,000 × 20 = 40,000 PX
-Prize Pool: 0.4 × 2,000 × 20 = 16,000 PX (80%)
-Creator Royalties: 0.1 × 2,000 × 20 = 4,000 PX (20%)
+P = (∑ All User Bets) + F
 ```
 
-### Exponential Decay Impact
+Where `F` is optional Foundation Funding that can be injected into the prize pool.
 
-Simulations suggest exponential decay (`k=0.1`) increases the prize pool by **10%** compared to linear decay, as more shares are maintained throughout the collection period.
+### Payout Calculation
+
+The **Value per Share (V)** is the final price of one share. It is determined by the total Prize Pool (`P`) divided by the total shares issued _only_ by the winning photo (`∑ S_Total, Win`).
+
+```
+V = P / (∑ Winning Photo S_Total)
+```
+
+The final payout to any stakeholder is calculated by multiplying their accumulated shares by the final share value (`V`).
+
+```
+Stakeholder Payout = Stakeholder Shares · V
+```
+
+### Economic Implications
+
+The system creates an internal, dynamic share price (`V`) which is inherently less than the initial user capital contribution (since `R_C` and `R_F` dilute the pool) unless the prize pool is significantly boosted by losing bets or Foundation Funding (`F`).
+
+This dilution incentivizes users to secure the maximum possible `D_t` bonus. It ensures that the earliest collectors can receive a higher positive return on investment, aligning with the **"higher risk, higher reward"** game design and preventing last-minute sniping.
 
 ## Revenue Distribution Table
 
-| Transaction | Creator Revenue | Prize Pool |
-|:---|:---|:---|
-| 100 themed collects at 20 PX | 400 PX (20%) | 1,600 PX (80%) |
-| 50 freestyle JPEGs at 10 PX | 500 PX (direct) | - |
+| Transaction                  | User Capital    | Creator Shares           | Foundation Shares        | Prize Pool        |
+| :--------------------------- | :-------------- | :----------------------- | :----------------------- | :---------------- |
+| 100 themed collects at 20 PX | 2,000 PX (100%) | Diluted via shares (20%) | Diluted via shares (10%) | 2,000 PX + shares |
+| 50 freestyle JPEGs at 10 PX  | 500 PX (direct) | 500 PX (100%)            | -                        | -                 |
+
+<Info>
+  In the Shares-for-Fees model, 100% of user capital goes to the prize pool.
+  Fees are extracted through share dilution rather than capital reduction,
+  ensuring maximum capital efficiency.
+</Info>
 
 ## Monte Carlo Simulations
 
 ### Time Decay Model Simulation
 
 A Monte Carlo simulation of the time decay model predicts:
+
 - **40% increase in early collects** when `k=0.1` in exponential decay formula
 - More balanced participation throughout 24-hour period
 - Improved prize pool distribution
@@ -112,6 +143,7 @@ A Monte Carlo simulation of the time decay model predicts:
 ### Freestyle JPEG Trading
 
 Based on NFT market analogies:
+
 - Freestyle JPEG trading projected to increase creator revenue by **25%**
 - Market dynamics similar to meme-based cryptocurrency markets
 - Scarcity and creator reputation drive value
@@ -120,51 +152,61 @@ Based on NFT market analogies:
 
 ### Time Decay Characteristics
 
-**Linear Decay:**
-- Constant rate of decay
-- Predictable value reduction
-- Sharp cutoff at t=1
+**Quadratic Decay:**
 
-**Exponential Decay:**
-- Gradual value reduction
-- Never reaches zero (asymptotic)
-- Smoother user experience
+- Accelerating rate of decay as time progresses
+- Strong early incentive (high discount at t=0)
+- Rewards early risk-taking more aggressively than linear models
+- Creates larger cumulative discount "mass" for early posts
 
 ### Share Distribution
 
-Shares are distributed proportionally:
+Shares are distributed proportionally based on accumulated shares:
 
 ```
-User Payout = (User Shares / Total Winning Shares) × Prize Pool
+User Payout = User Shares · V
 ```
+
+Where `V` is the value per share calculated from the winning photo's total shares.
 
 This ensures fair distribution based on:
-- Collection timing (shares)
+
+- Collection timing (via `D_t` discount)
+- Bet amount (`B`)
 - Number of collects per user
 - Winning photo selection
 
 ## Optimization Considerations
 
-### Decay Constant Selection
+### Discount Parameter Selection
 
-The decay constant `k` balances:
-- Early collect incentives
-- Late collect participation
-- Prize pool size
-- User experience
+The maximum discount (`D_max`) and share rates (`R_C`, `R_F`) balance:
 
-**Testing:** Beta tests with `k=0.1` showed positive results.
+- Early collect incentives (via `D_max`)
+- Creator incentives (via `R_C`, typically 20%)
+- Platform sustainability (via `R_F`, typically 10%)
+- Capital efficiency (100% of capital to prize pool)
+- User retention
+
+**Current Parameters:**
+
+- `D_max = 0.99` (99% maximum discount)
+- `R_C = 0.20` (20% creator share rate)
+- `R_F = 0.10` (10% foundation share rate)
 
 ### Prize Pool Efficiency
 
-The 80/20 split optimizes:
-- Creator incentives (20% royalties)
-- Collector rewards (80% prize pool)
-- Platform sustainability
-- User retention
+The Shares-for-Fees model optimizes:
+
+- **Capital Efficiency:** 100% of user capital goes to prize pool
+- **Transparency:** All fees visible through share dilution
+- **Fairness:** Early collectors rewarded through time discount
+- **Sustainability:** Platform and creator fees via controlled dilution
 
 <Note>
-  Platform may adjust splits (e.g., 25% creator, 75% pool) based on metrics and user feedback.
+  Platform may adjust share rates (`R_C`, `R_F`) and discount parameters
+  (`D_max`) based on metrics and user feedback, but the core Shares-for-Fees
+  mechanism ensures capital efficiency.
 </Note>
 
 ## Validation Metrics
@@ -177,5 +219,6 @@ Based on beta testing and simulations:
 - **Revenue Projections:** On track with estimates
 
 <Tip>
-  Mathematical models guide platform design, but real-world user behavior and community dynamics also shape outcomes. The platform adapts based on data.
+  Mathematical models guide platform design, but real-world user behavior and
+  community dynamics also shape outcomes. The platform adapts based on data.
 </Tip>
